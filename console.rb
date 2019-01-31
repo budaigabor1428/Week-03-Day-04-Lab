@@ -4,18 +4,18 @@ require_relative('models/star')
 
 require ('pry-byebug')
 
-star1 = Star.new('Julia', 'Roberts')
+star1 = Star.new({ 'first_name' => 'Julia', 'last_name' => 'Roberts'} )
 star1.save
-star2 = Star.new('Ben', 'Stiller')
+star2 = Star.new({ 'first_name' => 'Ben', 'last_name' => 'Stiller' })
 star2.save
-star3 = Star.new('Jack', 'Nicholson')
+star3 = Star.new({ 'first_name' => 'Jack', 'last_name' => 'Nicholson' })
 star3.save
 
-movie1 = Movie.new('Batman Returns', 'Action')
+movie1 = Movie.new({ 'title' => 'Batman Returns', 'genre' => 'Action' })
 movie1.save
-movie2 = Movie.new('Meet the Fockers', 'Comedy')
+movie2 = Movie.new({ 'title' => 'Meet the Fockers', 'genre' => 'Comedy' })
 movie2.save
-movie3 = Movie.new('Pretty Womamn', 'Romantic Comedy')
+movie3 = Movie.new({ 'title' => 'Pretty Womamn', 'genre' => 'Romantic Comedy' })
 movie3.save
 
 casting1 = Casting.new({ 'star_id' => star1.id, 'movie_id' => movie3.id, 'fee' => 100000 })
