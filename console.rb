@@ -4,6 +4,10 @@ require_relative('models/star')
 
 require ('pry-byebug')
 
+Casting.delete_all()
+Movie.delete_all()
+Star.delete_all()
+
 star1 = Star.new({ 'first_name' => 'Julia', 'last_name' => 'Roberts'} )
 star1.save
 star2 = Star.new({ 'first_name' => 'Ben', 'last_name' => 'Stiller' })
@@ -24,6 +28,10 @@ casting2 = Casting.new({ 'star_id' => star2.id, 'movie_id' => movie2.id, 'fee' =
 casting2.save
 casting3 = Casting.new({ 'star_id' => star3.id, 'movie_id' => movie1.id, 'fee' => 200000 })
 casting3.save
+
+Star.all()
+Movie.all()
+Casting.all()
 
 binding.pry
 nil
