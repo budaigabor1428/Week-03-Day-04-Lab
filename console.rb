@@ -15,11 +15,11 @@ star2.save
 star3 = Star.new({ 'first_name' => 'Jack', 'last_name' => 'Nicholson' })
 star3.save
 
-movie1 = Movie.new({ 'title' => 'Batman Returns', 'genre' => 'Action' })
+movie1 = Movie.new({ 'title' => 'Batman Returns', 'genre' => 'Action', 'budget' => 100 })
 movie1.save
-movie2 = Movie.new({ 'title' => 'Meet the Fockers', 'genre' => 'Comedy' })
+movie2 = Movie.new({ 'title' => 'Meet the Fockers', 'genre' => 'Comedy', 'budget' => 150 })
 movie2.save
-movie3 = Movie.new({ 'title' => 'Pretty Womamn', 'genre' => 'Romantic Comedy' })
+movie3 = Movie.new({ 'title' => 'Pretty Womamn', 'genre' => 'Romantic Comedy', 'budget' => 200})
 movie3.save
 
 casting1 = Casting.new({ 'star_id' => star1.id, 'movie_id' => movie3.id, 'fee' => 10 })
