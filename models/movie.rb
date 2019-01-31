@@ -58,5 +58,4 @@ class Movie
     SqlRunner.run(sql, values)
   end
 
-
 end
