@@ -20,6 +20,18 @@ class Movie
     @id = movie['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE movies SET (title, genre) = ($1, $2) WHERE id = $3"
+    values = [@title, @genre, @id]
+    SqlRunner.run(sql, values).first
+  end
+
+  def delete()
+    sql = "DELETE FROM movies WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT * FROM movies"
     values = []
