@@ -4,19 +4,19 @@ DROP TABLE movies;
 
 CREATE TABLE movies (
   id SERIAL8 PRIMARY KEY,
-  title TEXT VARCHAR(255),
-  genre TEXT VARCHAR(255)
+  title VARCHAR(255),
+  genre VARCHAR(255)
 );
 
 CREATE TABLE stars (
   id SERIAL8 PRIMARY KEY,
-  first_name TEXT VARCHAR(255),
-  last_name TEXT VARCHAR(255)
+  first_name VARCHAR(255),
+  last_name VARCHAR(255)
 );
 
 CREATE TABLE castings (
   id SERIAL8 PRIMARY KEY,
   movie_id INT2 REFERENCES movies(id) ON DELETE CASCADE,
   star_id INT2 REFERENCES stars(id) ON DELETE CASCADE,
-  fee INT2
+  fee INT8
 );

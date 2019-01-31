@@ -1,6 +1,6 @@
-require_relative('models/casting')
-require_relative('models/movie')
-require_relative('models/star')
+require_relative('models/casting.rb')
+require_relative('models/movie.rb')
+require_relative('models/star.rb')
 
 require ('pry-byebug')
 
@@ -22,11 +22,11 @@ movie2.save
 movie3 = Movie.new({ 'title' => 'Pretty Womamn', 'genre' => 'Romantic Comedy' })
 movie3.save
 
-casting1 = Casting.new({ 'star_id' => star1.id, 'movie_id' => movie3.id, 'fee' => 100000 })
+casting1 = Casting.new({ 'star_id' => star1.id, 'movie_id' => movie3.id, 'fee' => 10 })
 casting1.save
-casting2 = Casting.new({ 'star_id' => star2.id, 'movie_id' => movie2.id, 'fee' => 50000 })
+casting2 = Casting.new({ 'star_id' => star2.id, 'movie_id' => movie2.id, 'fee' => 5 })
 casting2.save
-casting3 = Casting.new({ 'star_id' => star3.id, 'movie_id' => movie1.id, 'fee' => 200000 })
+casting3 = Casting.new({ 'star_id' => star3.id, 'movie_id' => movie1.id, 'fee' => 20 })
 casting3.save
 
 Star.all()

@@ -12,4 +12,25 @@ class Casting
     @fee = options['fee'].to_i
   end
 
+  def save()
+    sql = "INSERT INTO castings (movie_id, star_id, fee)
+    VALUES ($1, $2, $3)
+    RETURNING id"
+    values = [@movie_id, @star_id, @fee]
+    casting = SqlRunner.run(sql, values).first
+    @id = casting['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM castings"
+    castings = SqlRunner.run(sql)
+    result = castings.map{|casting| Casting.new(casting)}
+    return result
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM castings"
+    SqlRunner.run(sql)
+  end
+
 end
