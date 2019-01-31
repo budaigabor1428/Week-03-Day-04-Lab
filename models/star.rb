@@ -11,6 +11,17 @@ class Star
     @last_name = options['last_name']
   end
 
+  def movie()
+    sql = "SELECT movies.* FROM movies
+           INNER JOIN castings
+           ON castings.movie_id = movies.id
+           WHERE castings.star_id = $1"
+    values = [@id]
+    movies = SqlRunner.run(sql, values)
+    result = movies.map { |movie| Movie.new(movie) }
+    return result
+  end
+
   def save()
     sql = "INSERT INTO stars (first_name, last_name)
     VALUES ($1, $2)
